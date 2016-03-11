@@ -214,11 +214,11 @@ label[for='toggle-all'] {
 .todo-list li .destroy {
 	display: none;
 	position: absolute;
-	top: 30px;
-	right: 40px;
+	top: 15px;
+	right: 10px;
 	/* bottom: 0; */
-	width: 0;
-	height: 0;
+	width: 30px;
+	height: 30px;
 	margin: auto 0;
 	line-height: 1px;
 	font-size: 44px;
@@ -227,19 +227,13 @@ label[for='toggle-all'] {
 	transition: color 0.2s ease-out;
 }
 
-.todo-list li .destroy:hover {
--webkit-box-shadow: 12px 0px 25px 15px rgb(204, 154, 154);
-   -moz-box-shadow: 12px 0px 25px 15px rgb(204, 154, 154);
-		box-shadow: 12px 0px 25px 15px rgb(204, 154, 154);
-	color: whitesmoke;
-}
-
 .todo-list li .destroy:after {
 	content: '×';
 }
 
 .todo-list li:hover .destroy {
 	display: block;
+	z-index: 50;
 }
 
 .todo-list li .edit {
