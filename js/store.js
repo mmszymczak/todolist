@@ -1,8 +1,6 @@
 (function(window){
 	'use strict';
 
-
-
 	function Store(array){
 		this.array = array;
 	}
@@ -20,9 +18,6 @@
 		}
 		window.localStorage.toDoDB = JSON.stringify(this.array);
 	}
-
-
-
 
 window.app = window.app || {};
 window.app.Store = Store;

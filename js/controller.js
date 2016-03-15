@@ -3,14 +3,14 @@
 
 	
 	function Controller(model, view) {
-		var self = this;
-		self.model = model;
-		self.view = view;
+		this.model = model;
+		this.view = view;
 	}
 
 	Controller.prototype.restoreStorage = function(){
+		var self = this;
 		this.model.localStorage.array.forEach(function(object){
-			todo.view.createListItem(object);
+			self.view.createListItem(object);
 		});
 	}
 
@@ -21,6 +21,10 @@
 		if(event.target.classList.contains('turn-important')){
 			this.view.toggleImportant(event, id);
 		}
+	}
+
+	Controller.prototype.getEventListener = function(){
+		// ? ? ?
 	}
 
 

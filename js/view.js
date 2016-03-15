@@ -44,9 +44,27 @@
 					t.innerHTML = input.value;
 					parent.removeChild(input);
 					parent.classList.remove('editing');
-					//store();
 				}
 			});
+		}
+	}
+
+	View.prototype.toggleItemCompleted = function(event, id){
+		var t = event.target,
+			parent = findParent(t,'li'),
+			parentClass = parent.classList;
+
+		if(t.tagName === 'INPUT'){
+			if(!parentClass.contains('completed')){	
+				parentClass.add('completed');
+				t.setAttribute('checked', true);
+				if(parentClass.contains('important')){
+					parentClass.remove('important');
+				}
+			}else if(parentClass.contains('completed')){
+				parentClass.remove('completed');
+				t.removeAttribute('checked');
+			}
 		}
 	}
 
@@ -64,10 +82,7 @@
 		}else if(parentClass.contains('important')){
 			parentClass.remove('important');
 		}
-		
 	}
-
-
 
 	window.app = window.app || {};
 	window.app.View = View;
