@@ -16,6 +16,7 @@
 
 	Controller.prototype.selectEvent = function(event, id){
 		if(event.target.classList.contains('destroy')){
+			this.model.removeElement(id); 
 			this.view.removeListItem(event, id);
 		}
 		if(event.target.classList.contains('turn-important')){

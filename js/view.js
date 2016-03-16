@@ -1,8 +1,7 @@
 (function(window){
 	'use strict';
 
-	function View(model){
-		this.model = model;
+	function View(){
 		this.newToDoInput = document.querySelector('.new-todo');
 		this.list = document.querySelector('.todo-list');
 	}
@@ -25,7 +24,6 @@
 		parent = findParent(t,'li');
 
 		findParent(t,'ul').removeChild(parent);
-		todo.model.removeElement(id); 
 	}
 
 	View.prototype.editLabel = function(event, id){

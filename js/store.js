@@ -2,7 +2,11 @@
 	'use strict';
 
 	function Store(array){
-		this.array = array;
+		if(Array.isArray(array)){
+			this.array = array;
+		}else{
+			throw new Error("Array please");
+		}
 	}
 
 	Store.prototype.addObjectToLocalStorage = function(object){

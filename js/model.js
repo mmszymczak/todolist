@@ -23,7 +23,7 @@
 	Model.prototype.addElement = function(event){
 		if(event.which === 13) {
 	    	if(this.value.trim() === ''){
-				newToDoInput.value = ''; 
+				this.value = ''; 
 				return;
 			}
 			var newitem = todo.model.create(this.value);
